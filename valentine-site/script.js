@@ -27,7 +27,7 @@
   const RUNWAY_PROXIMITY = 80;       // px; move NO when pointer within this
   const RUNWAY_DEBOUNCE_MS = 150;   // avoid jitter
   const NUM_DAYS = 14;
-  const IMAGE_BASE = '../images/';
+  const IMAGE_BASE = 'images/';
   const IMAGE_EXT = '.jpg';
 
   let lastRunawayTime = 0;
@@ -147,7 +147,7 @@
   }
 
   // --- Nice try (NO clicked) — show gif instead of text ---
-  const NICE_TRY_GIF = '../images/emoji-disintegrating.gif';
+  const NICE_TRY_GIF = 'images/emoji-disintegrating.gif';
   btnNo.addEventListener('click', function () {
     niceTryMsg.hidden = false;
     niceTryMsg.innerHTML = '<img class="nice-try-gif" src="' + NICE_TRY_GIF + '" alt="Nice try">';

@@ -245,7 +245,7 @@ body::before {
 
 /* Screen B: roses as full-page background when calendar is shown */
 body.calendar-page {
-  background: url("../images/roses.jpg") center / cover no-repeat fixed;
+  background: url("images/roses.jpg") center / cover no-repeat fixed;
 }
 
 .btn-back {
