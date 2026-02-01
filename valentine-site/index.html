@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+  IMAGES: Place 14 photos in the folder: valentine-site/images/
+  Filenames (two-digit): 01.jpg, 02.jpg, 03.jpg, ... 14.jpg
+  If an image is missing, the tile shows a graceful "Photo not found" fallback.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will you be my Valentine? 💘</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <audio id="bg-music" src="audio/Sade - Kiss Of Life - Official - 1993.mp3" preload="auto" aria-label="Background music"></audio>
+  <div class="screen-wrap">
+  <!-- Screen A: Ask screen — card style -->
+  <section id="screen-ask" class="screen screen-ask active" aria-label="Valentine question">
+    <div class="card ask-card">
+      <p class="card-dear">Dear Emma,</p>
+      <h1>Will you be my Valentine? 💘</h1>
+      <p class="subtext">Choose wisely...</p>
+      <div class="buttons-wrap">
+        <button type="button" id="btn-yes" class="btn btn-yes">YES</button>
+        <button type="button" id="btn-no" class="btn btn-no" aria-label="No (hard to click)">NO</button>
+      </div>
+      <p id="nice-try-msg" class="nice-try-msg" aria-live="polite" hidden></p>
+      <p class="card-from">From Lucas</p>
+    </div>
+    <div id="celebration-container" class="celebration-container" aria-hidden="true"></div>
+  </section>
+
+  <!-- Screen B: Calendar screen -->
+  <section id="screen-calendar" class="screen screen-calendar" aria-label="14 days calendar" hidden>
+    <button type="button" id="btn-back" class="btn-back" aria-label="Back to card">←</button>
+    <div class="card">
+      <h2>14 days till Valentine's Day...</h2>
+      <h2> so, here are 14 photos of us! ❤️</h2>
+      <p class="revealed-count" id="revealed-count" aria-live="polite">Revealed: 0 / 14</p>
+      <div class="calendar-grid" id="calendar-grid" role="grid" aria-label="14 day calendar tiles">
+        <!-- Tiles Day 1–14 injected by JS -->
+      </div>
+      <p id="final-message" class="final-message" aria-live="polite" hidden>I love you ❤️ You made the smart choice 😉</p>
+      <p id="final-link-wrap" class="final-link-wrap" hidden>Let's go <a id="final-link" href="https://www.thenarrowspublichouse.ca/" target="_blank" rel="noopener noreferrer">HERE</a> soon!</p>
+      <button type="button" id="btn-reset" class="btn-reset" aria-label="Reset calendar and clear revealed days">Reset</button>
+    </div>
+  </section>
+  </div>
+
+  <!-- Lightbox modal -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image view" hidden>
+    <button type="button" id="lightbox-close" class="lightbox-close" aria-label="Close image view">&times;</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Revealed day image">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
